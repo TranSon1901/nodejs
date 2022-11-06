@@ -3,9 +3,13 @@ import morgan from 'morgan';
 import path from 'path'
 import { fileURLToPath } from 'url';
 import configViewEngine from './config/viewEngine';
+import dotenv from "dotenv"
 
+
+dotenv.config();
 const app = express()
-const port = 3001
+const port = process.env.PORT||3000
+
 // app.use(morgan('combined'))
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +19,9 @@ configViewEngine(app)
 
 app.get('/', (req, res) => {
   res.render('home');
+})
+app.get('/newpage', (req, res) => {
+  res.render('new');
 })
 
 app.listen(port, () => {
