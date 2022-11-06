@@ -3,10 +3,10 @@ import { engine } from 'express-handlebars';
 
 const configViewEngine=(app)=>{
     app.engine('hbs', engine({
-        extname:".hbs"
+        extname:'.hbs'
     }));
     app.set('view engine','hbs');
-    app.set('views',"./src/resource/views");
-    app.use(express.static("./src/public"));
+    app.set('views','./src/resource/views');
+    app.use(express.static('./src/public'));
 }
 export default configViewEngine
