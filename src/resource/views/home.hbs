@@ -5,12 +5,18 @@
     <th>FirstName</th>
     <th>LastName</th>
     <th>adress</th>
+    <th>Action</th>
   </tr>
  {{#each data}}  
   <tr>
     <td>{{this.firstName}}</td>
     <td>{{this.lastName}}</td>
     <td>{{this.adress}}</td>
+    <td>
+        <button>Edit</button>
+        <button>Create</button>
+        <button>Delete</button>
+    </td>
   </tr>
  {{/each }}
 </table>
