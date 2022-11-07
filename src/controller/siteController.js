@@ -5,15 +5,6 @@ const getHomePage=(req,res)=>{
     connection.query(
     'SELECT * FROM `users`',
     function(err, results, fields) {
-      //  results.map((row)=>{
-      //    data.push({
-      //       id:row.id,
-      //       firstName:row.firstName,
-      //       lastName:row.lastName,
-      //       adress:row.adress
-      //    })
-      // })
-      // console.log(data)
       return res.render('home',{data:results})
    }
 );
