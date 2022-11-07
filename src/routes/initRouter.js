@@ -1,11 +1,8 @@
 import express from 'express'
-import { getHomePage,getNewPage } from '../controller/homeController'
- const router=express.Router()
-
+import { routerNewpage } from './newpage'
+import { routersite } from './site'
  const inItRouter=(app)=>{
-      router.get('/',getHomePage)
-      router.get('/newpage',getNewPage)
-      return app.use('/',router)
-      
+      app.use('/new',routerNewpage)
+      app.use('/',routersite)
  }
  export default inItRouter
