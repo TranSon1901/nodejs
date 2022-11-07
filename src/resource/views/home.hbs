@@ -6,10 +6,11 @@
     <th>LastName</th>
     <th>adress</th>
   </tr>
+ {{#each data}}  
   <tr>
-    <td>Tran</td>
-    <td>son</td>
-    <td>12 an nho 7</td>
+    <td>{{this.firstName}}</td>
+    <td>{{this.lastName}}</td>
+    <td>{{this.adress}}</td>
   </tr>
+ {{/each }}
 </table>
- {{data}}
