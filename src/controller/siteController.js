@@ -1,12 +1,22 @@
 import connection from "../config/connetDB";
+
 const getHomePage=(req,res)=>{
-   connection.query(
-      'SELECT * FROM `users`',
-      function(err, results, fields) {
-        return res.render('home')
-      }
-    );
-   
+   const data=[]
+    connection.query(
+    'SELECT * FROM `users`',
+    function(err, results, fields) {
+       results.map((row)=>{
+         data.push({
+            id:row.id,
+            firstName:row.firstName,
+            lastName:row.lastName,
+            adress:row.adress
+         })
+      })
+      console.log(data)
+      return res.render('home',{data:JSON.stringify(data)})
+   }
+);
 }
 const getAboutPage=(req,res)=>{
    return res.render('about')

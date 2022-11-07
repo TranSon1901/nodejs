@@ -6,11 +6,11 @@ const connection = mysql.createConnection({
     database: 'nodebasic'
   });
   
-  // simple query
-  connection.query(
-    'SELECT * FROM `users`',
-    function(err, results, fields) {
-      console.log(results); // results contains rows returned by server
-    }
-  );
+//   // simple query
+//   connection.query(
+//     'SELECT * FROM `users`',
+//     function(err, results, fields) {
+//       console.log(results); // results contains rows returned by server
+//     }
+//   );
 export default connection
