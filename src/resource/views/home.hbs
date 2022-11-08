@@ -2,15 +2,17 @@
 
 <table>
   <tr>
-    <th>FirstName</th>
-    <th>LastName</th>
+    <th>FullaName</th>
+    <th>age</th>
+    <th>Email</th>
     <th>adress</th>
     <th>Action</th>
   </tr>
  {{#each data}}  
   <tr>
-    <td>{{this.firstName}}</td>
-    <td>{{this.lastName}}</td>
+    <td>{{this.fullName}}</td>
+    <td>{{this.age}}</td>
+    <td>{{this.email}}</td>
     <td>{{this.adress}}</td>
     <td>
         <button>Edit</button>
@@ -20,3 +22,16 @@
   </tr>
  {{/each }}
 </table>
+
+<form action="/action_page.php" class="form">
+  <label for="fullName">full name:</label><br>
+  <input type="text" id="fullname" name="fname"><br>
+  <label for="age">age:</label><br>
+  <input type="text" id="age" name="age"><br>
+  <label for="lastName">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="lastName">adress:</label><br>
+  <input type="text" id="adress" name="adress">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 

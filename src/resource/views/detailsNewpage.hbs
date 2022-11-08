@@ -1,1 +1,22 @@
-<h1>details</h1>
+<table>
+  <tr>
+    <th>FullaName</th>
+    <th>age</th>
+    <th>Email</th>
+    <th>adress</th>
+    <th>Action</th>
+  </tr>
+ {{#each data}}  
+  <tr>
+    <td>{{this.fullName}}</td>
+    <td>{{this.age}}</td>
+    <td>{{this.email}}</td>
+    <td>{{this.adress}}</td>
+    <td>
+        <button>Edit</button>
+        <button>Create</button>
+        <button>Delete</button>
+    </td>
+  </tr>
+ {{/each }}
+</table>

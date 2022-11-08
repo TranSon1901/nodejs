@@ -43,5 +43,9 @@ table {
   }
   
   tr:nth-child(even) {
-    /* background-color: #dddddd; */
+    background-color: #dddddd;
   }
+form{
+   margin: 30px auto;
+   width: 500px;
+}
