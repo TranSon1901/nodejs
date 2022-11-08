@@ -23,15 +23,16 @@
  {{/each }}
 </table>
 
-<form action="/action_page.php" class="form">
+<form action="/create-users" class="form" 
+   method="POST" >
   <label for="fullName">full name:</label><br>
-  <input type="text" id="fullname" name="fname"><br>
+  <input type="text" name="fullName"><br>
   <label for="age">age:</label><br>
-  <input type="text" id="age" name="age"><br>
-  <label for="lastName">Email:</label><br>
-  <input type="text" id="email" name="email"><br>
-  <label for="lastName">adress:</label><br>
-  <input type="text" id="adress" name="adress">
+  <input type="text" name="age"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" name="email"><br>
+  <label for="adress">adress:</label><br>
+  <input type="text" name="adress">
   <br><br>
-  <input type="submit" value="Submit">
+   <button type="submit">Submit</button>
 </form> 

@@ -15,4 +15,17 @@ const getAboutPage=(req,res)=>{
 const getContactPage=(req,res)=>{
    return res.render('contact')
 }
-export {getAboutPage,getHomePage,getContactPage}
+const createUsers=(req,res)=>{
+   const {fullName,age,email,adress}= req.body
+   console.log(req.body)
+   connection.query(
+      'INSERT INTO users(fullName,age,email,adress) values(? , ? , ?, ?)',
+       [fullName,age,email,adress],
+      function(err, results, fields) {
+         console.log(results)
+      }
+      )
+      return res.redirect('/')
+   
+}
+export {getAboutPage,getHomePage,getContactPage,createUsers}
