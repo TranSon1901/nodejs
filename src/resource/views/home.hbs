@@ -16,11 +16,10 @@
     <td>{{this.adress}}</td>
     <td>
       <form action="getUser/{{this.id}}" method="GET">
-        <input type="text"/> 
         <button type="submit">Edit</button>
       </form>
         <form action="/delete-users" method="POST">
-          <input type="text" value={{this.id}} name='userId'/>
+          <input type="text" value={{this.id}} name='userId' hidden/>
           <button type="submit">Delete</button>
         </form>
     </td>

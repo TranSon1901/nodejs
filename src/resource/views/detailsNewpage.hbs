@@ -23,8 +23,9 @@
     <td>{{this.email}}</td>
     <td>{{this.adress}}</td>
     <td>
-        <button>Edit</button>
-        <button>Create</button>
+        <form action="/getUser/{{this.id}}" method="GET">
+        <button type="submit">Edit</button>
+      </form>
         <button>Delete</button>
     </td>
   </tr>

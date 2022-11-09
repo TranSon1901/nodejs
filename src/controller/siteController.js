@@ -36,7 +36,7 @@ const deteleUsers=(req,res)=>{
       return res.redirect('/')
 }
 const getEdit=(req,res)=>{
-   const id=req.params.id
+   const id = req.params.id
    connection.query(
       'SELECT * FROM `users` WHERE id = ?', [id],
       function(err, results, fields) {
