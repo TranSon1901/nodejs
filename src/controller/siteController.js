@@ -41,8 +41,21 @@ const getEdit=(req,res)=>{
       'SELECT * FROM `users` WHERE id = ?', [id],
       function(err, results, fields) {
           if(err) throw err
-         return res.render('update',{data:results})
+          console.log(results)
+         return res.render('update', {data:results[0]})
        }
    )
 }
-export {getAboutPage,getHomePage,getContactPage,createUsers,deteleUsers,getEdit}
+const update=(req,res)=>{
+   const {fullName,age,email,adress,userId}= req.body
+   connection.query(
+      'UPDATE users set fullName=?, age=?, email=?, adress=? where id = ?',
+      [fullName,age,email,adress, userId],
+      function(err,results,fields){
+         if(err) throw err
+      }
+   )
+   return res.redirect('/')
+
+}
+export {getAboutPage,getHomePage,getContactPage,createUsers,deteleUsers,getEdit,update}

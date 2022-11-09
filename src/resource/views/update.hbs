@@ -8,21 +8,22 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-{{#each data}}  
-<form action="getUpdate" class="form" 
-   method="GET" >
+{{data}}
+<form action="/Update" class="form" 
+   method="POST" >
   <label for="fullName">full name:</label><br>
-  <input type="text" value={{this.fullName}} name="fullName"><br>
+  <input value={{data.fullName}} name="fullName"><br>
   <label for="age">age:</label><br>
-  <input type="text" value={{this.age}} name="age"><br>
+  <input value={{data.age}} name="age"><br>
   <label for="email">Email:</label><br>
-  <input type="text" value={{this.email}} name="email"><br>
+  <input value={{data.email}} name="email"><br>
   <label for="adress">adress:</label><br>
-  <input type="text" value={{this.adress}} name="adress">
+  <input value={{data.adress}} name="adress"><br>
+  <input type="text" value={{data.id}} hidden name="userId">
   <br><br>
-   <button type="submit">Submit</button>
+   <button type="submit">Save</button>
 </form> 
- {{/each }}
+
    
 </body>
 </html>
