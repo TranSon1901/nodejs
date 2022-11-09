@@ -1,10 +1,10 @@
 import connection from "../config/connetDB";
 
 const getHomePage=(req,res)=>{
-   const data=[]
     connection.query(
     'SELECT * FROM `users`',
     function(err, results, fields) {
+      if (err) throw err;
       return res.render('home',{data:results})
    }
 );
@@ -17,15 +17,32 @@ const getContactPage=(req,res)=>{
 }
 const createUsers=(req,res)=>{
    const {fullName,age,email,adress}= req.body
-   console.log(req.body)
    connection.query(
       'INSERT INTO users(fullName,age,email,adress) values(? , ? , ?, ?)',
        [fullName,age,email,adress],
       function(err, results, fields) {
-         console.log(results)
+         if (err) throw err;
+      })
+      return res.redirect('/')
+}
+const deteleUsers=(req,res)=>{
+    const {userId} = req.body
+    connection.query(
+      'DELETE FROM users WHERE id=?',[userId],
+      function(err,results,fields){
+         if(err) throw err
       }
       )
       return res.redirect('/')
-   
 }
-export {getAboutPage,getHomePage,getContactPage,createUsers}
+const getEdit=(req,res)=>{
+   const id=req.params.id
+   connection.query(
+      'SELECT * FROM `users` WHERE id = ?', [id],
+      function(err, results, fields) {
+          if(err) throw err
+         return res.render('update',{data:results})
+       }
+   )
+}
+export {getAboutPage,getHomePage,getContactPage,createUsers,deteleUsers,getEdit}

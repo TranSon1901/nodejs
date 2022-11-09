@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+{{#each data}}  
+<form action="getUpdate" class="form" 
+   method="GET" >
+  <label for="fullName">full name:</label><br>
+  <input type="text" value={{this.fullName}} name="fullName"><br>
+  <label for="age">age:</label><br>
+  <input type="text" value={{this.age}} name="age"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" value={{this.email}} name="email"><br>
+  <label for="adress">adress:</label><br>
+  <input type="text" value={{this.adress}} name="adress">
+  <br><br>
+   <button type="submit">Submit</button>
+</form> 
+ {{/each }}
+   
+</body>
+</html>

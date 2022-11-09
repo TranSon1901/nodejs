@@ -12,12 +12,17 @@
   <tr>
     <td>{{this.fullName}}</td>
     <td>{{this.age}}</td>
-    <td>{{this.email}}</td>
+    <td>{{this.email}}</td
     <td>{{this.adress}}</td>
     <td>
-        <button>Edit</button>
-        <button>Create</button>
-        <button>Delete</button>
+      <form action="getUser/{{this.id}}" method="GET">
+        <input type="text"/> 
+        <button type="submit">Edit</button>
+      </form>
+        <form action="/delete-users" method="POST">
+          <input type="text" value={{this.id}} name='userId'/>
+          <button type="submit">Delete</button>
+        </form>
     </td>
   </tr>
  {{/each }}
